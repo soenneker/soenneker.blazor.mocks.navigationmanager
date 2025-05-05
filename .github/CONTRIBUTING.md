@@ -1,4 +1,4 @@
-# Contributing to Soenneker.Blazor.Mocks.NavigationManager
+﻿# Contributing to Soenneker.Blazor.Mocks.NavigationManager
 
 We're excited that you're interested in contributing!
 
