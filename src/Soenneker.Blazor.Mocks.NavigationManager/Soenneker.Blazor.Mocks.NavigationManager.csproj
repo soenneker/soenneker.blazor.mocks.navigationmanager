@@ -47,3 +47,4 @@
         <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="10.0.5" />
     </ItemGroup>
 </Project>
+
