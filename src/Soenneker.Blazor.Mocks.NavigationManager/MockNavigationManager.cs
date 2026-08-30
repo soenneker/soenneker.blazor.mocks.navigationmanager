@@ -7,7 +7,7 @@ namespace Soenneker.Blazor.Mocks.NavigationManager;
 /// <remarks>This class simulates navigation behavior without performing actual browser navigation, allowing
 /// components to be tested in isolation from the Blazor runtime environment. It is intended for use in test scenarios
 /// where a real NavigationManager is not available or not desirable.</remarks>
-public class MockNavigationManager: Microsoft.AspNetCore.Components.NavigationManager
+public class MockNavigationManager : Microsoft.AspNetCore.Components.NavigationManager
 {
     public MockNavigationManager()
     {
@@ -16,6 +16,7 @@ public class MockNavigationManager: Microsoft.AspNetCore.Components.NavigationMa
 
     protected override void NavigateToCore(string uri, bool forceLoad)
     {
-        Uri = uri;
+        Uri = ToAbsoluteUri(uri).ToString();
+        NotifyLocationChanged(isInterceptedLink: false);
     }
 }

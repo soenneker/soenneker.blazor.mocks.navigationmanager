@@ -4,7 +4,7 @@ using Microsoft.Extensions.DependencyInjection.Extensions;
 namespace Soenneker.Blazor.Mocks.NavigationManager.Registrars;
 
 /// <summary>
-/// A simple threadsafe version of NavigationManager for testing with Blazor
+/// Registers a lightweight <see cref="Microsoft.AspNetCore.Components.NavigationManager"/> test double.
 /// </summary>
 public static class MockNavigationManagerRegistrar
 {
