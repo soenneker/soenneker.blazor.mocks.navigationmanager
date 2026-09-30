@@ -15,14 +15,14 @@ public class MockNavigationManagerTests : HostedUnitTest
     }
 
     [Test]
-    public async Task Default()
+    public async ValueTask Default()
     {
         await Assert.That(_util.BaseUri).IsEqualTo("http://localhost/");
         await Assert.That(_util.Uri).IsEqualTo("http://localhost/");
     }
 
     [Test]
-    public async Task NavigateTo_ResolvesRelativeUri_AndRaisesLocationChanged()
+    public async ValueTask NavigateTo_ResolvesRelativeUri_AndRaisesLocationChanged()
     {
         LocationChangedEventArgs? observed = null;
         _util.LocationChanged += (_, args) => observed = args;
