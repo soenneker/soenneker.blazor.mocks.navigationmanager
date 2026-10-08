@@ -1,6 +1,7 @@
 using Soenneker.Tests.HostedUnit;
 using Microsoft.AspNetCore.Components.Routing;
 using System.Threading.Tasks;
+using System.Threading;
 
 namespace Soenneker.Blazor.Mocks.NavigationManager.Tests;
 
@@ -15,14 +16,14 @@ public class MockNavigationManagerTests : HostedUnitTest
     }
 
     [Test]
-    public async ValueTask Default()
+    public async ValueTask Default(CancellationToken cancellationToken)
     {
         await Assert.That(_util.BaseUri).IsEqualTo("http://localhost/");
         await Assert.That(_util.Uri).IsEqualTo("http://localhost/");
     }
 
     [Test]
-    public async ValueTask NavigateTo_ResolvesRelativeUri_AndRaisesLocationChanged()
+    public async ValueTask NavigateTo_ResolvesRelativeUri_AndRaisesLocationChanged(CancellationToken cancellationToken)
     {
         LocationChangedEventArgs? observed = null;
         _util.LocationChanged += (_, args) => observed = args;
