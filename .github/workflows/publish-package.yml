@@ -40,7 +40,7 @@ jobs:
       - name: Setup .NET
         uses: actions/setup-dotnet@v6
         with:
-          dotnet-version: 10.0.401
+          dotnet-version: 10.0.402
 
       - name: Restore tests
         run: dotnet restore test/Soenneker.Blazor.Mocks.NavigationManager.Tests/Soenneker.Blazor.Mocks.NavigationManager.Tests.csproj --verbosity minimal
